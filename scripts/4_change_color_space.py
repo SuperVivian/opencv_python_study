@@ -22,5 +22,5 @@ class ChangeColorSpace:
 
 
 if __name__ == '__main__':
-    change = ChangeColorSpace('images/test1.jpg')
+    change = ChangeColorSpace('../images/test1.jpg')
     change.change_color_space()

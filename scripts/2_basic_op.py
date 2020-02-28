@@ -68,5 +68,5 @@ class Basic:
 
 
 if __name__ == '__main__':
-    basic = Basic('images/test1.jpg')
+    basic = Basic('../images/test1.jpg')
     basic.make_border()

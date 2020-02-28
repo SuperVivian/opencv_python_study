@@ -56,5 +56,5 @@ class Compute:
 
 
 if __name__ == '__main__':
-    compute = Compute('images/test1.jpg')
+    compute = Compute('../images/test1.jpg')
     compute.bit_compute()

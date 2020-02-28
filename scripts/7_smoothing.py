@@ -26,5 +26,5 @@ class Smoothing:
 
 
 if __name__ == '__main__':
-    smooth = Smoothing('images/test1.jpg')
+    smooth = Smoothing('../images/test1.jpg')
     smooth.blur()

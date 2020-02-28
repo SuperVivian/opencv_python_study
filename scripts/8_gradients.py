@@ -32,5 +32,5 @@ class Gradients:
 
 
 if __name__ == '__main__':
-    g = Gradients('images/test3.jpg')
+    g = Gradients('../images/test3.jpg')
     g.gradient()

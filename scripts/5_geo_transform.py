@@ -75,5 +75,5 @@ class GeoTransform:
         plt.show()
 
 if __name__ == '__main__':
-    trans = GeoTransform('images/test1.jpg')
+    trans = GeoTransform('../images/test1.jpg')
     trans.translate()

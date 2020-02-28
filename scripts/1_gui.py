@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 class GUI:
     def __init__(self, infile):
         self.infile = infile
+        self.img = cv2.imread(self.infile)
 
     def read_show_save_img(self, outfile):
         """
@@ -27,14 +28,14 @@ class GUI:
             cv2.imwrite(outfile, img)
             cv2.destroyAllWindows()  # 清除所有窗口
 
-    def show_gray_img_in_plt(self,img):
+    def show_gray_img_in_plt(self):
         img = cv2.imread(self.infile, 0)  # 【1】opencv读入图片
         plt.imshow(img, cmap='gray', interpolation='bicubic')  # 【2】plt读入图片
         plt.show()  # 【3】plt显示图片
 
-    def show_color_img_in_plt(self,img):
+    def show_color_img_in_plt(self):
         # opencv读取图片。若彩色，是BGR模式。
-        img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换模式
+        img2 = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)  # 转换模式
         plt.imshow(img2)  # plt是RGB模式。
         plt.xticks([]), plt.yticks([])  # 隐藏tick
         plt.title('RGB')
@@ -42,5 +43,5 @@ class GUI:
 
 
 if __name__ == '__main__':
-    gui = GUI('images/test1.jpg')
+    gui = GUI('../images/test1.jpg')
     gui.show_color_img_in_plt()

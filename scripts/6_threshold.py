@@ -44,5 +44,5 @@ class Threshold:
         pass
 
 if __name__ == '__main__':
-    trans = Threshold('images/test1.jpg')
+    trans = Threshold('../images/test1.jpg')
     trans.adaptive_threshold()
