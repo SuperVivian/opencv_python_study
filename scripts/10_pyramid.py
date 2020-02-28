@@ -56,14 +56,22 @@ class Pyramid:
             ls=np.hstack((la[:,0:cols//2],lb[:,cols//2:]))
             LS.append(ls)
 
+
+
         # 【5】根据融合后的图像金字塔重建原始图像
         res=[]
         ls_=LS[0]#LS是融合后的拉普拉斯图像，0-5是从小到大
         res.append(ls_)
         for i in range(1,6):
             ls_=cv2.pyrUp(ls_)
-            ls_=cv2.add(ls_,LS[i])
+            # ls_=cv2.add(ls_,LS[i])
             res.append(ls_)
+
+        for i in range(6):
+            img=cv2.cvtColor(res[i],cv2.COLOR_BGR2RGB)
+            plt.subplot(2,3,i+1),plt.imshow(img)
+            plt.xticks([]),plt.yticks([])
+        plt.show()
 
         real=np.hstack((A[:,:cols//2],B[:,cols//2:]))
         titles = ['apple', 'orange','real','blend']
