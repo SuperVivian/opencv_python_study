@@ -34,6 +34,12 @@ class Draw:
         cv2.imshow('image',img)
         cv2.waitKey(0)
 
+    def drawImage(self):
+        img = np.zeros((100, 100, 3), np.uint8)
+        cv2.line(img, (0, 50), (99, 50), (255, 0, 0), 2)  # 原图、起点、终点、蓝色、粗细
+        cv2.imshow('image', img)
+        cv2.waitKey(0)
+
 if __name__ == '__main__':
     d = Draw('../images/test2.jpg')
-    d.draw()
+    d.drawImage()
